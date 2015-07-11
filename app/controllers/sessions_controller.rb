@@ -7,17 +7,20 @@ class SessionsController < ApplicationController
 
     if @user
       login_user!(@user)
-      redirect_to "http://google.com"
+      flash[:notice] = ['Successfully logged in!']
+      redirect_to new_session_url
     else
-      flash[:errors] = @user.errors.full_messages
+      flash.now[:errors] = ['Invalid username/password combo.']
       render :new
     end
   end
 
   def new
-    @user = User.new
   end
 
   def destroy
+    logout_user!
+    flash[:notice] = ['Successfully logged out!']
+    redirect_to new_session_url
   end
 end
