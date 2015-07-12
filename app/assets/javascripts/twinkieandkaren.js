@@ -12,6 +12,6 @@ window.Twinkieandkaren = {
   }
 };
 
-$(document).ready(function(){
-  Twinkieandkaren.initialize();
-});
+// $(document).ready(function(){
+//   Twinkieandkaren.initialize();
+// });
