@@ -4,7 +4,11 @@ window.Twinkieandkaren = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    var router = new Twinkieandkaren.Routers.Router({
+      $rootEl: $('#content')
+    });
+    Backbone.history.start();
+    // alert('Hello from Backbone!');
   }
 };
 
